@@ -36,10 +36,10 @@ public class databaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertData(String text,String Content) {
+    public boolean insertData(String title,String Content) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TITLE,text);
+        contentValues.put(TITLE,title);
         contentValues.put(NOTES,Content);
         contentValues.put(DATE,getDateTime());
         long result = db.insert(NOTES_TBL,null,contentValues);
