@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
-                        Toast.makeText(MainActivity.this, "Deleted "+notesDataList.get(position).getID(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Deleted successfully", Toast.LENGTH_SHORT).show();
                         db.deleteData(Integer.parseInt(notesDataList.get(position).getID()));
                         readDataFromDB();
                     }
