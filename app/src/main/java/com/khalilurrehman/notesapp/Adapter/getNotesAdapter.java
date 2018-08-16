@@ -22,13 +22,15 @@ public class getNotesAdapter extends RecyclerView.Adapter<getNotesAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder  {
 
         public TextView note_title,
-                note_text;
+                note_text,
+                note_date;
         CardView note_cardview;
 
         public MyViewHolder(View view) {
             super(view);
             note_title = view.findViewById(R.id.note_title);
             note_text = view.findViewById(R.id.note_text);
+            note_date = view.findViewById(R.id.note_date);
             note_cardview = view.findViewById(R.id.note_card);
 
         }
@@ -52,6 +54,7 @@ public class getNotesAdapter extends RecyclerView.Adapter<getNotesAdapter.MyView
         NotesData notesData = notelist.get(position);
         holder.note_title.setText(notesData.getTITLE());
         holder.note_text.setText(notesData.getNOTES());
+        holder.note_date.setText(notesData.getDATE());
 
     }
 

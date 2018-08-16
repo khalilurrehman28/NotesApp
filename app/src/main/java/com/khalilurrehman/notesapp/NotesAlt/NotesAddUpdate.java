@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.khalilurrehman.notesapp.R;
 
@@ -24,6 +25,9 @@ public class NotesAddUpdate extends AppCompatActivity {
         notes_text = findViewById(R.id.notes_text);
         notesTitle = findViewById(R.id.notes_title);
         id = getIntent().getIntExtra("note_id",0);
+        Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
+        notes_text.setText(getIntent().getStringExtra("note_text"));
+        notesTitle.setText(getIntent().getStringExtra("note_title"));
     }
 
     @Override

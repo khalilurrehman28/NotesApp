@@ -60,7 +60,8 @@ public class databaseHelper extends SQLiteOpenHelper {
 
     public void deleteData(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.rawQuery("DELETE * FROM "+ NOTES_TBL+" WHERE "+ID+"="+id+" ",null);
+        //db.rawQuery("DELETE FROM "+ NOTES_TBL+" WHERE "+ID+"="+id+" ",null);
+        db.delete(NOTES_TBL,ID+"=?",new String[]{String.valueOf(id)});
     }
 
     public Cursor getData() {
